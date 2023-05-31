@@ -1,4 +1,8 @@
 package tech.devinhouse.aviacaoapi.mapper;
 
-public class PassageiroMapper {
+import org.mapstruct.Mapper;
+import org.mapstruct.ReportingPolicy;
+
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
+public interface PassageiroMapper {
 }

@@ -14,12 +14,12 @@ public class Passageiro {
     private String cpf;
     private String nome;
     private LocalDate dataNascimento;
-    private PassageiroClassificacao classificacao;
+    private String classificacao;
     private Integer milhas;
 
     public Passageiro(Integer id, String cpf,
                       String nome, LocalDate dataNascimento,
-                      PassageiroClassificacao classificacao, Integer milhas) {
+                      String classificacao, Integer milhas) {
         this.id = id;
         this.cpf = cpf;
         this.nome = nome;
@@ -27,6 +27,8 @@ public class Passageiro {
         this.classificacao = classificacao;
         this.milhas = milhas;
     }
+
+    public Passageiro() {}
 
     public Integer getId() {
         return id;
@@ -60,11 +62,11 @@ public class Passageiro {
         this.dataNascimento = dataNascimento;
     }
 
-    public PassageiroClassificacao getClassificacao() {
+    public String getClassificacao() {
         return classificacao;
     }
 
-    public void setClassificacao(PassageiroClassificacao classificacao) {
+    public void setClassificacao(String classificacao) {
         this.classificacao = classificacao;
     }
 

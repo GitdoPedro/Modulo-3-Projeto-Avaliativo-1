@@ -10,8 +10,8 @@ import java.util.List;
 
 @Service
 public class PassageiroService {
-    @Autowired
-    PassageiroMapper PassageiroMapper;
+   /* @Autowired
+    PassageiroMapper passageiroMapper;*/
     @Autowired
     PassageiroRepository passageiroRepository;
 

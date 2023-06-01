@@ -1,34 +1,29 @@
 package tech.devinhouse.aviacaoapi.dto;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.Column;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
-public class PassageiroListagemDTO {
-
+public class PassageiroPorCpfDTO {
+    @Column(unique = true)
     private String cpf;
     private String nome;
     private LocalDate dataNascimento;
     private String classificacao;
     private Integer milhas;
-    private String eticket;
-    private String assento;
-    private LocalDateTime dataHora;
 
-    public PassageiroListagemDTO(String cpf, String nome, LocalDate dataNascimento,
-                                 String classificacao, Integer milhas) {
+    public PassageiroPorCpfDTO(String cpf, String nome, LocalDate dataNascimento,
+                               String classificacao, Integer milhas) {
         this.cpf = cpf;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.classificacao = classificacao;
         this.milhas = milhas;
-        this.eticket = null;
-        this.assento = null;
-        this.dataHora = null;
     }
 
-    public PassageiroListagemDTO() {}
+    public PassageiroPorCpfDTO() {}
 
     public String getCpf() {
         return cpf;
@@ -70,27 +65,17 @@ public class PassageiroListagemDTO {
         this.milhas = milhas;
     }
 
-    public String getEticket() {
-        return eticket;
-    }
-
-    public void setEticket(String eticket) {
-        this.eticket = eticket;
-    }
-
-    public String getAssento() {
-        return assento;
-    }
-
-    public void setAssento(String assento) {
-        this.assento = assento;
-    }
-
-    public LocalDateTime getDataHora() {
-        return dataHora;
-    }
-
-    public void setDataHora(LocalDateTime dataHora) {
-        this.dataHora = dataHora;
+    @Override
+    public String toString() {
+        StringBuilder string = new StringBuilder();
+        string.append("{");
+        string.append("\"cpf\":\"").append(cpf).append("\",");
+        string.append("\"nome\":\"").append(nome).append("\",");
+        string.append("\"dataNascimento\":\"").append(dataNascimento).append("\",");
+        string.append("\"classificacao\":\"").append(classificacao).append("\",");
+        string.append("\"milhas\":").append(milhas);
+        string.append("}");
+        return string.toString();
     }
 }
+

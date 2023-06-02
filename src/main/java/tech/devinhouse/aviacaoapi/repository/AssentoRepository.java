@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 import tech.devinhouse.aviacaoapi.model.Assento;
 
 @Repository
-public interface AssentoRepository extends JpaRepository<Assento, Integer>{
-
-
+public interface AssentoRepository extends JpaRepository<Assento, String>{
+    Assento findByNomeIgnoreCase(String nomeAssento);
 }

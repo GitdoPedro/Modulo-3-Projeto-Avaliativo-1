@@ -11,18 +11,27 @@ public class Bilhete {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String eTicket;
-    private String assento;
     private Boolean malasDespachadas;
     private LocalDateTime dataHoraConfirmacao;
+    @ManyToOne
+    @JoinColumn(name = "passageiro_id")
+    private Passageiro passageiro;
 
-    public Bilhete(Integer id, String eTicket, String assento,
-                   Boolean malasDespachadas, LocalDateTime dataHoraConfirmacao) {
+    @OneToOne
+    @JoinColumn(name = "assento_id")
+    private Assento assento;
+
+    public Bilhete(Integer id, String eTicket, Boolean malasDespachadas,
+                   LocalDateTime dataHoraConfirmacao,
+                   Passageiro passageiro, Assento assento) {
         this.id = id;
         this.eTicket = eTicket;
-        this.assento = assento;
         this.malasDespachadas = malasDespachadas;
         this.dataHoraConfirmacao = dataHoraConfirmacao;
+        this.passageiro = passageiro;
+        this.assento = assento;
     }
+    public Bilhete() {}
 
     public Integer getId() {
         return id;
@@ -40,14 +49,6 @@ public class Bilhete {
         this.eTicket = eTicket;
     }
 
-    public String getAssento() {
-        return assento;
-    }
-
-    public void setAssento(String assento) {
-        this.assento = assento;
-    }
-
     public Boolean getMalasDespachadas() {
         return malasDespachadas;
     }
@@ -63,4 +64,21 @@ public class Bilhete {
     public void setDataHoraConfirmacao(LocalDateTime dataHoraConfirmacao) {
         this.dataHoraConfirmacao = dataHoraConfirmacao;
     }
+
+    public Passageiro getPassageiro() {
+        return passageiro;
+    }
+
+    public void setPassageiro(Passageiro passageiro) {
+        this.passageiro = passageiro;
+    }
+
+    public Assento getAssento() {
+        return assento;
+    }
+
+    public void setAssento(Assento assento) {
+        this.assento = assento;
+    }
+
 }

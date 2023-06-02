@@ -12,11 +12,21 @@ public class Assento {
     @Column(unique = true)
     private String nome;
     private Boolean emergencial;
+    private Boolean ocupado;
 
-    public Assento(Integer id, String nome, Boolean emergencial) {
+    public Assento(Integer id, String nome, Boolean emergencial,Boolean ocupado) {
         this.id = id;
         this.nome = nome;
         this.emergencial = emergencial;
+        this.ocupado = false;
+    }
+
+    public Boolean getOcupado() {
+        return ocupado;
+    }
+
+    public void setOcupado(Boolean ocupado) {
+        this.ocupado = ocupado;
     }
 
     public Assento() {}

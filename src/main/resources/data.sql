@@ -31,3 +31,7 @@ INSERT INTO passageiro
 INSERT INTO passageiro
     (nome, cpf,data_nascimento, classificacao,milhas )
     VALUES('Richard Burke','999.999.999-99',PARSEDATETIME('29/01/1945','dd/MM/yyyy'),'BRONZE','50');
+
+--Assentos
+
+INSERT INTO assento(nome,emergencial) VALUES('1A',false);

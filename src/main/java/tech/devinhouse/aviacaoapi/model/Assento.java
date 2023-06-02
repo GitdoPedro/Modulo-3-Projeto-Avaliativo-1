@@ -3,8 +3,8 @@ package tech.devinhouse.aviacaoapi.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "assentos")
-public class Assentos {
+@Table(name = "assento")
+public class Assento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,11 +13,13 @@ public class Assentos {
     private String nome;
     private Boolean emergencial;
 
-    public Assentos(Integer id, String nome, Boolean emergencial) {
+    public Assento(Integer id, String nome, Boolean emergencial) {
         this.id = id;
         this.nome = nome;
         this.emergencial = emergencial;
     }
+
+    public Assento() {}
 
     public Integer getId() {
         return id;

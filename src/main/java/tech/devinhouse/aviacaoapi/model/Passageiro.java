@@ -1,14 +1,17 @@
 package tech.devinhouse.aviacaoapi.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 
 import java.time.LocalDate;
 @Entity
 @Table(name = "passageiro")
+
 public class Passageiro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer id;
     @Column(unique = true)
     private String cpf;

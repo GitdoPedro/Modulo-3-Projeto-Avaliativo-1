@@ -15,7 +15,7 @@ Através dos métodos disponíveis nos controllers, é possível realizar requis
 Essa API possibilita uma integração simplificada e uma experiência completa para os usuários da aplicação.
 
 Para cada endpoint, é necessário passar os parâmetros correspondentes de acordo com a documentação da API.
-Além disso, é necessário enviar os dados em formato JSON com as informações requeridas, de acordo com o formato especificado na documentação da API.
+Além disso, é necessário enviar os dados em formato JSON com as informações requeridas, de acordo com o formato especificado na documentação da API.(https://docs.google.com/document/d/1ZTHxHAZmpffV4guoa3a_8vTjCBsI7KdWWDqOB3HebMQ/edit)
 
 ## Tecnologias
 Spring Boot: O projeto utiliza o framework Spring Boot como base, conforme especificado no elemento <parent>. O Spring Boot é um framework Java para criação de aplicativos e serviços robustos e escaláveis.
